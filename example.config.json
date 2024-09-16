@@ -1,0 +1,46 @@
+{
+	"version": "0.1.0",
+	"autoStart": true,
+	"app": [
+		{
+			"name": "希沃白板",
+			"icon": "../assets/Seewo.png",
+			"runCmd": "powershell Start-Process 'C:\\Program Files (x86)\\Seewo\\EasiNote5\\swenlauncher\\swenlauncher.exe'"
+		},
+		{
+			"name": "Chinese",
+			"icon": "../assets/Chinese.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Math",
+			"icon": "../assets/Math.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "English",
+			"icon": "../assets/English.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Physics",
+			"icon": "../assets/Physics.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Chemistry",
+			"icon": "../assets/Chemistry.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Biology",
+			"icon": "../assets/Biology.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Geography",
+			"icon": "../assets/Geography.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		}
+	]
+}

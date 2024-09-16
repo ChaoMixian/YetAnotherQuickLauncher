@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Ball</title>
+    <link rel="stylesheet" href="all.min.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        #win {
+            width: 100vh;
+            height: 100vh;
+            border-radius: 50%;
+            background-color: rgba(0, 122, 255, 0.7);
+            position: absolute;
+            cursor: pointer;
+            -webkit-app-region: drag;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+
+        #controls {
+            position: absolute;
+            -webkit-app-region: no-drag;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="win">
+        <div id="controls">
+            <button id="maximize"><i class="fas fa-expand"></i></button> <!-- 最大化图标 -->
+        </div>
+    </div>
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        document.getElementById('maximize').addEventListener('click', () => {
+            ipcRenderer.send('maximize');
+        });
+    </script>
+</body>
+
+</html>
