@@ -95,9 +95,9 @@ button:hover {
 }
 
 .launcher-icon {
-    width: 80px;
+    width: 90px;
     height: 80px;
-    margin: 10px;
+    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,6 +108,6 @@ button:hover {
 
 
 .launcher-icon img {
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
 }

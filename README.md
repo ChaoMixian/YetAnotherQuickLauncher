@@ -1,11 +1,39 @@
 # 又一个启动器 | YAQL
-> *Yet Another Quick Launcher  <br> 还  另一个  桌面   启动   器*
+> *Yet Another Quick Launcher  <br> 还  另一个  快捷   启动   器*
 
 ![Version](https://img.shields.io/github/v/release/ChaoMixian/YetAnotherQuickLauncher.svg)
 ![Language](https://img.shields.io/badge/Language-JavaScript-yellow)
 ![BuildSuccess](https://img.shields.io/badge/build-success-green)
 
-**Yet Another Quick Launcher (YACT)** 是*又*一个桌面启动器，旨在帮助用户快速启动程序。它具有简单的界面和基本的功能，适合日常使用。
+**Yet Another Quick Launcher (YAQL)** 是*又*一个桌面快捷启动器，旨在帮助用户快速启动程序。它具有简单的界面和基本的功能，适合日常使用。
+
+![demo](demo.png)
+
+<div class="launcher-container">
+  <div class="launcher-icon"><img src="./assets/Seewo.png" alt="Icon 1"></div>
+  <div class="launcher-icon"><img src="./assets/Chinese.png" alt="Icon 2"></div>
+  <div class="launcher-icon"><img src="./assets/Math.png" alt="Icon 3"></div>
+  <div class="launcher-icon"><img src="./assets/English.png" alt="Icon 4"></div>
+  <div class="launcher-icon"><img src="./assets/Physics.png" alt="Icon 5"></div>
+  <div class="launcher-icon"><img src="./assets/Chemistry.png" alt="Icon 6"></div>
+  <div class="launcher-icon"><img src="./assets/Biology.png" alt="Icon 7"></div>
+  <div class="launcher-icon"><img src="./assets/Geography.png" alt="Icon 8"></div>
+</div>
+<style>
+.launcher-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 四列 */
+  gap: 10px; /* 图标间距 */
+  justify-items: center; /* 水平居中 */
+  align-items: center;   /* 垂直居中 */
+}
+
+.launcher-icon img {
+  width: 80px; /* 你可以根据需要调整图标的大小 */
+  height: 80px;
+}
+</style>
+
 
 
 ## 功能|Features
@@ -13,13 +41,70 @@
 - **透明和自定义窗口**：提供半透明和可自定义的窗口，极简美观
 - **开机自启动**：可设置应用程序在系统启动时自动运行。
 - **托盘功能**：支持系统托盘图标，方便用户快速访问。
-- **窗口置顶**：可以将倒计时窗口置顶，确保其始终可见。
+- **桌面悬浮球**：可以将启动器缩小为悬浮球，确保不会遮挡。
 - **设置界面**：允许用户自定义设置，包括开机自启动选项。
 
 ## 安装|Install
 1. **前往[Release](https://github.com/ChaoMixian/YetAnotherQuickLauncher/releases)下载并安装**
 
 2. **享受~~屎山~~之旅**
+
+## 配置|Configure
+### Windows
+```C:\Users\<用户名>\AppData\Roaming\yet-another-quick-launcher\config.json```
+
+### Linux
+```C:\Users\<用户名>\AppData\Roaming\yet-another-quick-launcher\config.json```
+
+### 配置文件示例
+```json
+{
+	"version": "0.1.0",
+	"autoStart": true,
+	"app": [
+		{
+			"name": "希沃白板",
+			"icon": "../assets/Seewo.png",
+			"runCmd": "powershell Start-Process 'C:\\Program Files (x86)\\Seewo\\EasiNote5\\swenlauncher\\swenlauncher.exe'"
+		},
+		{
+			"name": "Chinese",
+			"icon": "../assets/Chinese.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Math",
+			"icon": "../assets/Math.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "English",
+			"icon": "../assets/English.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Physics",
+			"icon": "../assets/Physics.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Chemistry",
+			"icon": "../assets/Chemistry.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Biology",
+			"icon": "../assets/Biology.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		},
+		{
+			"name": "Geography",
+			"icon": "../assets/Geography.png",
+			"runCmd": "explorer.exe C:\\Windows"
+		}
+	]
+}
+```
 
 ## 构建|Build
 1. **克隆或下载代码**
@@ -41,11 +126,15 @@
    npm start
    ```
 
+4. **打包应用**
+
+   ```bash
+   npm run build
+   ```
 
 ## 截图|Screenshot
 
 ![demo](demo.png)
-![screenshot](screenshot.png)
 
 ## 贡献|Devotion
 

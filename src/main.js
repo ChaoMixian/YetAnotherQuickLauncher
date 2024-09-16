@@ -157,7 +157,7 @@ async function initConfig() {
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 400,
-    height: 230,
+    height: 211,
     frame: false, // 去掉窗口边框
     transparent: true, // 使窗口透明
     webPreferences: {

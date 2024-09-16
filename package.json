@@ -1,7 +1,7 @@
 {
   "name": "yet-another-quick-launcher",
   "version": "1.0.0",
-  "description": "> *Yet Another Quick Launcher  <br> 还  另一个  桌面   启动   器*",
+  "description": "还另一个快捷启动器*",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
