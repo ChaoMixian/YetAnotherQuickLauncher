@@ -9,30 +9,18 @@
 
 ![demo](demo.png)
 
-<div class="launcher-container">
-  <div class="launcher-icon"><img src="./assets/Seewo.png" alt="Icon 1"></div>
-  <div class="launcher-icon"><img src="./assets/Chinese.png" alt="Icon 2"></div>
-  <div class="launcher-icon"><img src="./assets/Math.png" alt="Icon 3"></div>
-  <div class="launcher-icon"><img src="./assets/English.png" alt="Icon 4"></div>
-  <div class="launcher-icon"><img src="./assets/Physics.png" alt="Icon 5"></div>
-  <div class="launcher-icon"><img src="./assets/Chemistry.png" alt="Icon 6"></div>
-  <div class="launcher-icon"><img src="./assets/Biology.png" alt="Icon 7"></div>
-  <div class="launcher-icon"><img src="./assets/Geography.png" alt="Icon 8"></div>
-</div>
-<style>
-.launcher-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 四列 */
-  gap: 10px; /* 图标间距 */
-  justify-items: center; /* 水平居中 */
-  align-items: center;   /* 垂直居中 */
-}
-
-.launcher-icon img {
-  width: 80px; /* 你可以根据需要调整图标的大小 */
-  height: 80px;
-}
-</style>
+<p align="center">
+  <img src="./assets/Seewo.png" alt="Icon 1" width="100">
+  <img src="./assets/Chinese.png" alt="Icon 2" width="100">
+  <img src="./assets/Math.png" alt="Icon 3" width="100">
+  <img src="./assets/English.png" alt="Icon 4" width="100">
+</p>
+<p align="center">
+  <img src="./assets/Physics.png" alt="Icon 5" width="100">
+  <img src="./assets/Chemistry.png" alt="Icon 6" width="100">
+  <img src="./assets/Biology.png" alt="Icon 7" width="100">
+  <img src="./assets/Geography.png" alt="Icon 8" width="100">
+</p>
 
 
 
