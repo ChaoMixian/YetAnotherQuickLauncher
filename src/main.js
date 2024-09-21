@@ -13,7 +13,6 @@ let mainWindow = null;
 let settingsWindow = null;
 let floatingBall = null
 let tray = null;
-let isAlwaysOnTop = false;
 let Store;
 let store;
 
@@ -34,13 +33,16 @@ async function initConfig() {
   // 动态加载 electron-store
   Store = (await import('electron-store')).default;
 
+  // 获取应用版本
+  const appVersion = app.getVersion();
+
   // 定义默认配置
   let defaultConfig;  // 在函数作用域内声明 defaultConfig
 
   if (process.platform === "linux") {
     // Linux 的默认配置
     defaultConfig = {
-      version: "0.1.0",
+      version: appVersion,
       autoStart: true,
       app: [
         {
@@ -88,7 +90,7 @@ async function initConfig() {
   } else if (process.platform === "win32") {
     // Windows 的默认配置
     defaultConfig = {
-      version: "0.1.0",
+      version: appVersion,
       autoStart: true,
       app: [
         {
@@ -166,12 +168,13 @@ function createWindow() {
       enableRemoteModule: true,
       nodeIntegration: true, // 确保 nodeIntegration 为 true
       contextIsolation: false, // 解决require is not defined
-    }
+    },
+    alwaysOnTop: false, // 不要置顶
+    focusable: false,   // 不可聚焦
+    skipTaskbar: true   // 不显示在任务栏
   });
 
   mainWindow.loadFile('src/index.html');
-  mainWindow.setAlwaysOnTop(isAlwaysOnTop); // 默认不启用置顶
-  mainWindow.setSkipTaskbar(true); // 隐藏任务栏图标
 
   // 获取屏幕的工作区域
   const { workArea } = screen.getPrimaryDisplay();
@@ -275,12 +278,12 @@ function createFloatingBall() {
       enableRemoteModule: true,
       nodeIntegration: true,
       contextIsolation: false,
-    }
+    },
+    alwaysOnTop: false, // 不要置顶
+    skipTaskbar: true   // 不显示在任务栏
   });
 
   floatingBall.loadFile('src/floatingBall.html'); // 加载设置窗口的 HTML 文件
-  floatingBall.setAlwaysOnTop(isAlwaysOnTop); // 默认不启用置顶
-  floatingBall.setSkipTaskbar(true); // 隐藏任务栏图标
 
   // 获取屏幕的工作区域
   const { workArea } = screen.getPrimaryDisplay();

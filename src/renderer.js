@@ -8,9 +8,9 @@ document.getElementById('minimize').addEventListener('click', () => {
   ipcRenderer.send('minimize');
 });
 
-document.getElementById('close').addEventListener('click', () => {
-    ipcRenderer.send('close');
-});
+// document.getElementById('close').addEventListener('click', () => {
+//     ipcRenderer.send('close');
+// });
 
 const { exec } = require('child_process');
 
