@@ -170,11 +170,14 @@ function createWindow() {
       contextIsolation: false, // 解决require is not defined
     },
     alwaysOnTop: false, // 不要置顶
-    focusable: false,   // 不可聚焦
     skipTaskbar: true   // 不显示在任务栏
   });
 
   mainWindow.loadFile('src/index.html');
+
+  if (process.platform === 'win32') {
+    mainWindow.focusable(false);
+  }
 
   // 获取屏幕的工作区域
   const { workArea } = screen.getPrimaryDisplay();
