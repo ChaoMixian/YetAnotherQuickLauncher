@@ -176,7 +176,8 @@ function createWindow() {
   mainWindow.loadFile('src/index.html');
 
   if (process.platform === 'win32') {
-    mainWindow.focusable(false);
+    // This Fuck Makes Building Failed On Windows.
+    // mainWindow.focusable(false);
   }
 
   // 获取屏幕的工作区域
